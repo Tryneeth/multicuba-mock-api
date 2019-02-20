@@ -1,0 +1,186 @@
+[
+  {
+    "uuid": "9a17bec0-3392-11e9-ad4b-e7aac723108c",
+    "name": "Multicuba",
+    "endpointPrefix": "api",
+    "latency": 0,
+    "port": 3000,
+    "routes": [
+      {
+        "uuid": "dc417570-3392-11e9-ad4b-e7aac723108c",
+        "documentation": "",
+        "method": "post",
+        "endpoint": "oauth/token",
+        "body": "{\n    \"token_type\": \"Bearer\",\n    \"expires_in\": 32000,\n    \"access_token\": \"token\",\n    \"refresh_token\": \"refresh_token\"\n}",
+        "latency": 200,
+        "statusCode": "200",
+        "headers": [
+          {
+            "uuid": "dc417571-3392-11e9-ad4b-e7aac723108c",
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "file": null,
+        "duplicates": []
+      },
+      {
+        "uuid": "3d9d2350-34c9-11e9-978a-25508e00a273",
+        "documentation": "",
+        "method": "get",
+        "endpoint": "me/recarga/nauta",
+        "body": "[\n    {{#repeat 5}}\n    {\n        \"id\": {{@index}},\n        \"transaction_id\": {{@index}},\n        \"provision_status\": \"{{oneOf (array 'COMPLETED' 'FAILED' 'PENDING')}}\",\n        \"created_at\": \"{{date '2018' '2019' 'DD-MM-YYYY'}}\",\n        \"updated_at\": \"{{date '2018' '2019' 'DD-MM-YYYY'}}\"\n    }\n    {{/repeat}}\n]",
+        "latency": 0,
+        "statusCode": "200",
+        "headers": [
+          {
+            "uuid": "3d9d2351-34c9-11e9-978a-25508e00a273",
+            "key": "",
+            "value": ""
+          }
+        ],
+        "file": null,
+        "duplicates": []
+      },
+      {
+        "uuid": "4a0619b0-34cb-11e9-978a-25508e00a273",
+        "documentation": "",
+        "method": "get",
+        "endpoint": "me/recarga/nauta/:id",
+        "body": "{\n    \"id\": {{urlParam 'id'}},\n    \"transaction_id\": 2,\n    \"provision_status\": \"{{oneOf (array 'COMPLETED' 'FAILED' 'PENDING')}}\",\n    \"created_at\": \"{{date '2018' '2019' 'DD-MM-YYYY'}}\",\n    \"updated_at\": \"{{date '2018' '2019' 'DD-MM-YYYY'}}\"\n}\n   ",
+        "latency": 0,
+        "statusCode": "200",
+        "headers": [
+          {
+            "uuid": "4a0619b1-34cb-11e9-978a-25508e00a273",
+            "key": "",
+            "value": ""
+          }
+        ],
+        "file": null,
+        "duplicates": []
+      },
+      {
+        "uuid": "397dddd0-351b-11e9-978a-25508e00a273",
+        "documentation": "",
+        "method": "get",
+        "endpoint": "me/recarga/nauta/plans",
+        "body": "[\n    {{#repeat 5}}\n    {\n        \"id\": {{@index}},1\n        \"name\": \"Plan USD->CUC #{{@index}}\",\n    }\n    {{/repeat}}\n]\n   ",
+        "latency": 0,
+        "statusCode": "200",
+        "headers": [
+          {
+            "uuid": "397dddd1-351b-11e9-978a-25508e00a273",
+            "key": "",
+            "value": ""
+          }
+        ],
+        "file": null,
+        "duplicates": []
+      },
+      {
+        "uuid": "c82b22b0-3393-11e9-ad4b-e7aac723108c",
+        "documentation": "",
+        "method": "post",
+        "endpoint": "me/recarga/nauta",
+        "body": "{\n    \"success\": true,\n    \"data\": \n    {\n        \"id\": 1,\n        \"transaction_id\": 2,\n        \"provision_status\": \"COMPLETED\",\n        \"created_at\": \"2019-01-02\",\n        \"updated_at\": \"2019-01-02\"\n    },\n    \"message\": \"Completed Transaction\"\n}",
+        "latency": 0,
+        "statusCode": "200",
+        "headers": [
+          {
+            "uuid": "c82b22b1-3393-11e9-ad4b-e7aac723108c",
+            "key": "",
+            "value": ""
+          }
+        ],
+        "file": null,
+        "duplicates": []
+      },
+      {
+        "uuid": "cfc4fdf0-34cb-11e9-978a-25508e00a273",
+        "documentation": "",
+        "method": "get",
+        "endpoint": "me/recarga/cubacel",
+        "body": "[\n    {{#repeat 5}}\n    {\n        \"id\": {{@index}},\n        \"transaction_id\": {{@index}},\n        \"provision_status\": \"{{oneOf (array 'COMPLETED' 'FAILED' 'PENDING')}}\",\n        \"created_at\": \"{{date '2018' '2019' 'DD-MM-YYYY'}}\",\n        \"updated_at\": \"{{date '2018' '2019' 'DD-MM-YYYY'}}\"\n    }\n    {{/repeat}}\n]",
+        "latency": 0,
+        "statusCode": "200",
+        "headers": [
+          {
+            "uuid": "cfc4fdf1-34cb-11e9-978a-25508e00a273",
+            "key": "",
+            "value": ""
+          }
+        ],
+        "file": null,
+        "duplicates": []
+      },
+      {
+        "uuid": "d95b8550-34cb-11e9-978a-25508e00a273",
+        "documentation": "",
+        "method": "get",
+        "endpoint": "me/recarga/cubacel/:id",
+        "body": "{\n    \"id\": {{urlParam 'id'}},\n    \"transaction_id\": 2,\n    \"provision_status\": \"{{oneOf (array 'COMPLETED' 'FAILED' 'PENDING')}}\",\n    \"created_at\": \"{{date '2018' '2019' 'DD-MM-YYYY'}}\",\n    \"updated_at\": \"{{date '2018' '2019' 'DD-MM-YYYY'}}\"\n}\n   ",
+        "latency": 0,
+        "statusCode": "200",
+        "headers": [
+          {
+            "uuid": "d95b8551-34cb-11e9-978a-25508e00a273",
+            "key": "",
+            "value": ""
+          }
+        ],
+        "file": null,
+        "duplicates": []
+      },
+      {
+        "uuid": "a1331100-3513-11e9-978a-25508e00a273",
+        "documentation": "",
+        "method": "get",
+        "endpoint": "me/recarga/cubacel/plans",
+        "body": "[\n    {{#repeat 5}}\n    {\n        \"id\": {{@index}},1\n        \"name\": \"Plan USD-CUC #{{@index}}\",\n    }\n    {{/repeat}}\n]",
+        "latency": 0,
+        "statusCode": "200",
+        "headers": [
+          {
+            "uuid": "a1331101-3513-11e9-978a-25508e00a273",
+            "key": "",
+            "value": ""
+          }
+        ],
+        "file": null,
+        "duplicates": []
+      },
+      {
+        "uuid": "cd2cb8a0-3393-11e9-ad4b-e7aac723108c",
+        "documentation": "",
+        "method": "post",
+        "endpoint": "me/recarga/cubacel",
+        "body": "{\n    \"success\": true,\n    \"data\": \n    {\n        \"id\": 1,\n        \"transaction_id\": 2,\n        \"provision_status\": \"COMPLETED\",\n        \"created_at\": \"2019-01-02\",\n        \"updated_at\": \"2019-01-02\"\n    },\n    \"message\": \"Completed Transaction\"\n}",
+        "latency": 0,
+        "statusCode": "200",
+        "headers": [
+          {
+            "uuid": "cd2cdfb0-3393-11e9-ad4b-e7aac723108c",
+            "key": "",
+            "value": ""
+          }
+        ],
+        "file": null,
+        "duplicates": []
+      }
+    ],
+    "modifiedAt": "2019-02-20T14:28:48.813Z",
+    "duplicates": [],
+    "proxyMode": false,
+    "proxyHost": "",
+    "https": false,
+    "cors": true,
+    "headers": [
+      {
+        "uuid": "9a17bec1-3392-11e9-ad4b-e7aac723108c",
+        "key": "Content-Type",
+        "value": "application/json"
+      }
+    ]
+  }
+]
